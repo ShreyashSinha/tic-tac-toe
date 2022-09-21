@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: tic-tac-toe-app
+    image: tic-tac-toe-app
+    build: .
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      MYSQL_USER: shreyash
+      MYSQL_PASSWORD: password
+      MYSQL_HOST: mysql-standalone
+
+  mysql:
+    container_name: mysql-standalone
+    image: mysql:8.0.30
+    ports:
+      - 3306:3306
+    volumes:
+      - /Users/shreyashsinha/Desktop/db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: testdb
+  
