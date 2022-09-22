@@ -21,11 +21,11 @@ jobs:
         container port: 3306
         character set server: 'utf8'
         collation server: 'utf8_general_ci'
-        mysql version: 8.0.30
-        mysql database: testdb
-        mysql root password: password
-        mysql user: shreyash
-        mysql password: password
+        MYSQL_VERSION: 8.0.30
+        MYSQL_DATABASE: testdb
+        MYSQL_ROOT_PASSWORD: password
+        MYSQL_USER: shreyash
+        MYSQL_PASSWORD: password
     - uses: actions/checkout@v3
     - name: Set up JDK 17
       uses: actions/setup-java@v3
